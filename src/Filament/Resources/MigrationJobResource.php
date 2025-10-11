@@ -3,17 +3,18 @@
 namespace NetServa\Cli\Filament\Resources;
 
 use BackedEnum;
+use UnitEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use NetServa\Core\Filament\Resources\MigrationJobResource\Pages\CreateMigrationJob;
-use NetServa\Core\Filament\Resources\MigrationJobResource\Pages\EditMigrationJob;
-use NetServa\Core\Filament\Resources\MigrationJobResource\Pages\ListMigrationJobs;
-use NetServa\Core\Filament\Resources\MigrationJobResource\Schemas\MigrationJobForm;
-use NetServa\Core\Filament\Resources\MigrationJobResource\Tables\MigrationJobsTable;
+use NetServa\Cli\Filament\Resources\MigrationJobResource\Pages\CreateMigrationJob;
+use NetServa\Cli\Filament\Resources\MigrationJobResource\Pages\EditMigrationJob;
+use NetServa\Cli\Filament\Resources\MigrationJobResource\Pages\ListMigrationJobs;
+use NetServa\Cli\Filament\Resources\MigrationJobResource\Schemas\MigrationJobForm;
+use NetServa\Cli\Filament\Resources\MigrationJobResource\Tables\MigrationJobsTable;
 use NetServa\Core\Models\MigrationJob;
 
 class MigrationJobResource extends Resource
@@ -21,6 +22,10 @@ class MigrationJobResource extends Resource
     protected static ?string $model = MigrationJob::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    protected static UnitEnum|string|null $navigationGroup = 'CLI Management';
+
+    protected static ?int $navigationSort = 10;
 
     public static function form(Schema $schema): Schema
     {

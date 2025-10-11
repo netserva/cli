@@ -3,7 +3,7 @@
 namespace NetServa\Cli\Filament\Resources\MigrationJobResource\Pages;
 
 use Filament\Resources\Pages\CreateRecord;
-use NetServa\Core\Filament\Resources\MigrationJobResource;
+use NetServa\Cli\Filament\Resources\MigrationJobResource;
 
 class CreateMigrationJob extends CreateRecord
 {
